@@ -1,15 +1,18 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-html{
-    font-size: 65.5%;
+
+html {
+  font-size: 65.5%;
 }
-body{
-    /* font-family: 'Bebas Neue', cursive; */
-    font-family: 'Roboto', sans-serif;
-    /* font-family: 'Satisfy', cursive; */
-    color: #fff;
-    background-color: black;
+
+body {
+  /* font-family: 'Bebas Neue', cursive; */
+  font-family: 'Roboto', sans-serif;
+
+  /* font-family: 'Satisfy', cursive; */
+  color: #fff;
+  background-color: black;
 }
