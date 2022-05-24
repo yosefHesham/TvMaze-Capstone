@@ -1,5 +1,6 @@
 
 
-export const topRated= `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1`;
+export const BASEURL= `https://api.themoviedb.org/3/movie/`;
+export const TOP_RATED = "top_rated";
+export const POPULAR = "popular";
 
-console.log(process.env.API_KEY)
