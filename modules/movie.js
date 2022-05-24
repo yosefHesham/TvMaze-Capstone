@@ -8,3 +8,5 @@ class Movie {
     this.date= movie['release_date'];
   }
 }
+
+export default Movie
