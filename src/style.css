@@ -1,3 +1,11 @@
+
+:root{
+  --black:#080213;
+  --orange:#F4AF5C;
+  --secondary:#CC725D;
+
+
+}
 * {
   margin: 0;
   padding: 0;
@@ -14,5 +22,44 @@ body {
 
   /* font-family: 'Satisfy', cursive; */
   color: #fff;
-  background-color: black;
+  background-color: var(--black);
+}
+.wrapper {
+  width: 100%;
+  display: flex;
+  height: 100vh;
+
+}
+
+.sidebar {
+  width: 8%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 10%;
+}
+
+.sidebar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  color:  whitesmoke;
+  font-weight: 600;
+}
+
+.top-rated {
+  width: 90vw;
+  margin-top: 4%;
+  border-radius: 3px;
+  display: grid;
+
+  /* Use  display property as grid*/
+  gap: 10px;
+  grid-template-columns: repeat(
+      auto-fill, minmax(200px, 1fr));
+}
+h3 {
+  grid-column-start: 0  ;
 }
