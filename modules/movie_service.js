@@ -15,7 +15,7 @@ class MovieService {
   }
 
   static getTopRated = async () => {
-    let result = await fetch(`${BASEURL}/${TOP_RATED}?api_key=${process.env.API_KEY}`);
+    let result = await fetch(`${BASEURL}/${TOP_RATED}?api_key=${process.env.API_KEY}&page=3`);
     result = await result.json();
     /** @type {Array} */
     const data = result.results;
