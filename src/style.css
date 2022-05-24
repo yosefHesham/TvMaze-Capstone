@@ -1,11 +1,10 @@
 
-:root{
-  --black:#080213;
-  --orange:#F4AF5C;
-  --secondary:#CC725D;
-
-
+:root {
+  --black: #080213;
+  --orange: #f4af5c;
+  --secondary: #cc725d;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -24,12 +23,12 @@ body {
   color: #fff;
   background-color: var(--black);
 }
+
 .wrapper {
   width: 100%;
   display: flex;
   column-gap: 2%;
   height: 100vh;
-
 }
 
 .sidebar {
@@ -47,24 +46,27 @@ body {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  color:  whitesmoke;
+  color: whitesmoke;
   font-weight: 600;
 }
-
 
 .movies-wrapper {
   width: 88%;
 }
+
 .movies {
   margin-top: 2%;
   border-radius: 3px;
   display: grid;
-
   row-gap: 20px;
   column-gap: 15px;
-  grid-template-columns: repeat(
-      auto-fill, minmax(200px, 1fr));
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(200px, 1fr)
+    );
 }
+
 .section-title {
   text-align: start;
   margin-top: 2%;
@@ -73,13 +75,12 @@ body {
   color: var(--orange);
 }
 
-
 .movie-container {
-  background-color: #222A39;
+  background-color: #222a39;
   cursor: pointer;
-  transition:  transform .5s;
-  
+  transition: transform 0.5s;
 }
+
 .movie-container:hover {
   box-shadow: 0 8px 16px rgba(54, 179, 127, 0.24);
   transform: scale(1.1);
@@ -87,13 +88,12 @@ body {
 
 .movie-card {
   width: 100%;
-  height: 90%;  
+  height: 90%;
   position: relative;
-  
 }
+
 .movie-card img {
   height: 90%;
-
   width: 100%;
 }
 
@@ -107,7 +107,7 @@ body {
   background: linear-gradient(to bottom, transparent 0%, black 100%);
 }
 
-.rate-wrapper  {
+.rate-wrapper {
   display: flex;
   column-gap: 10px;
   align-items: center;
@@ -121,8 +121,6 @@ body {
   margin: 0;
   font-weight: 400;
   font-size: 12px;
-
-
 }
 
 .title {
