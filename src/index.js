@@ -1,6 +1,6 @@
-import { renderTopRated } from '../modules/movies_ui';
-import MovieService from '../modules/movie_service';
+import { renderMostPopular, renderTopRated } from '../modules/movies_ui';
 import './style.css';
 
 
 window.load = renderTopRated()
+window.load = renderMostPopular();

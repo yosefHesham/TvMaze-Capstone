@@ -56,3 +56,9 @@ export const renderTopRated = async () => {
   moviesIterator(topRated,topRatedSection);
   
 } 
+export const renderMostPopular = async () => {
+  await MovieService.getPopularMovies();
+  const popular = MovieService.popularMovies;
+  moviesIterator(popular,popularSection);
+
+} 
