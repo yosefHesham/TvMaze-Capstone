@@ -51,7 +51,7 @@ body {
 
 .top-rated {
   width: 90vw;
-  margin-top: 4%;
+  margin-top: 2%;
   border-radius: 3px;
   display: grid;
 
@@ -60,6 +60,10 @@ body {
   grid-template-columns: repeat(
       auto-fill, minmax(200px, 1fr));
 }
-h3 {
-  grid-column-start: 0  ;
+.section-title {
+  text-align: start;
+  margin-top: 2%;
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--orange);
 }
