@@ -20,10 +20,21 @@ class LikesService {
     const result = await fetch(`${INVOLVEMENT}/${process.env.APP_ID}/likes`, {
       method: "GET",
     });
-    const data = await result.json();
-    console.log(data);
+    this.itemLikes = await result.json();
+    console.log(this.itemLikes);
+    
 
   };
+
+  static getOneItemLikes = (id) =>  {
+    const item = LikesService.itemLikes.find(e => e.item_id== id);
+
+    if(item) {
+      return item.likes
+    }
+    return 0;
+
+  }
 
 }
 

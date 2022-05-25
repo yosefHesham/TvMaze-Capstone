@@ -3,7 +3,11 @@ import { renderMostPopular, renderTopRated } from '../modules/movies_ui.js';
 import './style.css';
 
 
-window.onload = LikesService.getItemLikes()
-window.load = renderTopRated();
-window.load = renderMostPopular();
+const call = async () => {
+ await  LikesService.getItemLikes()
+   renderTopRated();
+   renderMostPopular();
+  
+}
 
+window.load = call()

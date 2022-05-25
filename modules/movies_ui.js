@@ -1,6 +1,7 @@
 import configureListener from "./configure_listeners";
 import handleLike from "./event_listeners";
 import { toJson } from "./json_helper";
+import LikesService from "./likes_service";
 import Movie from "./movie";
 import MovieService from "./movie_service";
 
@@ -29,7 +30,7 @@ const createMovieCard = (movie) => {
 
     <div class="movie-interaction">
       <button> Comments </button>
-      <article class="like-btn" ><span  id=${movie.id} class="fa-regular fa-heart"></span> <span class="likes-count">0</span></article>
+      <article class="like-btn" ><span  id=${movie.id} class="fa-regular fa-heart"></span> <span class="likes-count">${LikesService.getOneItemLikes(movie.id)}</span></article>
 
     </div>
   </article>`;
