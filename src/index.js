@@ -15,3 +15,4 @@ window.load = renderMostPopular();
 // document.addEventListener('click', (e) => {
 //   console.log(e.target.dataset);
 // });
+window.load = renderMostPopular();
