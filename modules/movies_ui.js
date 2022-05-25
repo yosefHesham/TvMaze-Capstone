@@ -11,6 +11,7 @@ const popularSection = document.querySelector('.popular');
  */
 const createMovieCard = (movie) => {
   const tmp = document.createElement('tmp');
+  console.log(movie);
   // Check the data attribute you will use it to create the popup, retrieve it back with fromJson
   tmp.innerHTML = `<article class="movie-container" data=${toJson(movie)}">
     <div class="movie-card">
@@ -25,7 +26,7 @@ const createMovieCard = (movie) => {
     </div>
 
     <div class="movie-interaction">
-      <button> Comments </button>
+      <button class="comment" data-id="${movie.id}"> Comments </button>
       <p class="like">  like </p>
     </div>
   </article>`;

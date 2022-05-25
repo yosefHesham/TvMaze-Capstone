@@ -1,61 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
-    <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>  
-    <!--  Add bootstrap icon Library  -->  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--  Add bootstrap icon Library  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,400;0,500;0,700;1,100&family=Satisfy&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,400;0,500;0,700;1,100&family=Satisfy&display=swap"
+        rel="stylesheet" />
     <title>TV maze</title>
-  </head>
-  <body>
-    <main class="main">
-      <div class="wrapper">
-        <section class="sidebar">
-          <article class="sidebar-item">
-            <p>Home</p>
-          </article>
-          <article class="sidebar-item">
-            <p>Trending</p>
-          </article>
-          <article class="sidebar-item">
-            <p>Favourites</p>
-          </article>
-        </section>
+</head>
 
-        <div class="movies-wrapper">
-          <article class="top-rated-header">
-
-            <div class="header__logo">
-                <h3 class="section-title">TV maze</h3>
-            </div>
-            <div class="header__right">
-                <div class="container">
-                    <input type="text" id="search-box" placeholder="Search movie..." class="search__box">
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="#fa983a" class="search__icon" width="24" height="24" viewBox="0 0 24 24"><path d="M21.172 24l-7.387-7.387c-1.388.874-3.024 1.387-4.785 1.387-4.971 0-9-4.029-9-9s4.029-9 9-9 9 4.029 9 9c0 1.761-.514 3.398-1.387 4.785l7.387 7.387-2.828 2.828zm-12.172-8c3.859 0 7-3.14 7-7s-3.141-7-7-7-7 3.14-7 7 3.141 7 7 7z"/></svg>
-                </div>
-            </div>
-          </article>
-          <section class="movies top-rated">
-          </section>
-          <hr>
-          <article class="top-rated-header">
-            <h3 class="section-title">Most Popular</h3>
-          </article>
-          <section class="movies popular">
-          
-          </section>
+<body>
+    <div class="comment__popup">
+        <div class="popup__card">
+            <img src="https://image.tmdb.org/t/p/w200/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="single image">
         </div>
-      </div>
+        <div class="movie__data">
+            <h1>Space 3</h1>
+            <div class="movie__data-details">
+                <p>Date: 01/03/2020</p>
+                <p>Rate: 8.5</p>
+            </div>
+            <ul class="comment__list">
+                <li>So terrable
+                    <span>10 hour ago</span>
+                </li>
+                <li>For me it is good actualy
+                    <span>10 hour ago</span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <main class="main">
+        <div class="wrapper">
+            <section class="sidebar">
+                <article class="sidebar-item">
+                    <p>Home</p>
+                </article>
+                <article class="sidebar-item">
+                    <p>Trending</p>
+                </article>
+                <article class="sidebar-item">
+                    <p>Favourites</p>
+                </article>
+            </section>
+
+            <div class="movies-wrapper">
+                <article class="top-rated-header">
+
+                    <div class="header__logo">
+                        <h3 class="section-title">TV maze</h3>
+                    </div>
+                    <div class="header__right">
+                        <div class="container">
+                            <input type="text" id="search-box" placeholder="Search movie..." class="search__box">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fa983a" class="search__icon" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M21.172 24l-7.387-7.387c-1.388.874-3.024 1.387-4.785 1.387-4.971 0-9-4.029-9-9s4.029-9 9-9 9 4.029 9 9c0 1.761-.514 3.398-1.387 4.785l7.387 7.387-2.828 2.828zm-12.172-8c3.859 0 7-3.14 7-7s-3.141-7-7-7-7 3.14-7 7 3.141 7 7 7z" />
+                            </svg>
+                        </div>
+                    </div>
+                </article>
+                <section class="movies top-rated">
+                </section>
+                <hr>
+                <article class="top-rated-header">
+                    <h3 class="section-title">Most Popular</h3>
+                </article>
+                <section class="movies popular">
+
+                </section>
+            </div>
+        </div>
     </main>
-  </body>
+</body>
+
 </html>
