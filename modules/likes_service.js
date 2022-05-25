@@ -1,12 +1,13 @@
-import { INVOLVEMENT } from "./api_helper";
-import { toJson } from "./json_helper";
+import { INVOLVEMENT } from './api_helper';
+import { toJson } from './json_helper';
 
 class LikesService {
   static itemLikes = [];
+
   static postItemLikes = async (id) => {
     const result = await fetch(`${INVOLVEMENT}/${process.env.APP_ID}/likes`, {
       method: 'POST',
-      body: toJson({"item_id":id}),
+      body: toJson({ item_id: id }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
@@ -18,24 +19,20 @@ class LikesService {
 
   static getItemLikes = async () => {
     const result = await fetch(`${INVOLVEMENT}/${process.env.APP_ID}/likes`, {
-      method: "GET",
+      method: 'GET',
     });
     this.itemLikes = await result.json();
     console.log(this.itemLikes);
-    
-
   };
 
-  static getOneItemLikes = (id) =>  {
-    const item = LikesService.itemLikes.find(e => e.item_id== id);
+  static getOneItemLikes = (id) => {
+    const item = LikesService.itemLikes.find((e) => e.item_id == id);
 
-    if(item) {
-      return item.likes
+    if (item) {
+      return item.likes;
     }
     return 0;
-
   }
-
 }
 
 export default LikesService;

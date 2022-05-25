@@ -237,3 +237,24 @@ header {
   
 }
 
+/* Popup comments */
+.comment__popup{
+    width: 100vw;
+    height: 100vh;
+    background-color: #080213;
+    position: absolute;
+    z-index: 1000;
+    padding: 4% 20%;
+    /* display: none; */
+}
+
+.popup__card{
+    width: 100%;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+}
+.popup__card img{
+    width: 80%;
+    height: 50rem;
+}

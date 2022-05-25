@@ -1,16 +1,14 @@
-import getElement from "./get_element"
+import getElement from './get_element';
 
-const configureListener = (parent, handler, {childClassName}) => {
+const configureListener = (parent, handler, { childClassName }) => {
   /**
    * @type {HTMLElement}
    */
 
   /// like button element
-  const childElement = getElement(parent,childClassName);
+  const childElement = getElement(parent, childClassName);
 
-
-  childElement.addEventListener("click",handler);
-  
-}
+  childElement.addEventListener('click', handler);
+};
 
 export default configureListener;
