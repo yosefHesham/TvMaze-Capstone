@@ -1,20 +1,14 @@
-import configureListener from "./configure_listeners";
-import handleLike from "./event_listeners";
-import { toJson } from "./json_helper";
-import LikesService from "./likes_service";
-import Movie from "./movie";
-import MovieService from "./movie_service";
+import configureListener from './configure_listeners';
+import handleLike from './event_listeners';
+import { toJson } from './json_helper';
+import LikesService from './likes_service';
+import MovieService from './movie_service';
 
-export const topRatedSection = document.querySelector(".top-rated");
-const popularSection = document.querySelector(".popular");
+export const topRatedSection = document.querySelector('.top-rated');
+const popularSection = document.querySelector('.popular');
 
-/**
- *
- * @param {Movie} movie
- *
- */
 const createMovieCard = (movie) => {
-  const tmp = document.createElement("tmp");
+  const tmp = document.createElement('tmp');
   // Check the data attribute you will use it to create the popup, retrieve it back with fromJson
   tmp.innerHTML = `<article class="movie-container" data=${toJson(movie)}">
     <div class="movie-card">
@@ -42,7 +36,7 @@ const createMovieCard = (movie) => {
   4- we can get that button from the temp becauze it its parent
   */
 
-  configureListener(tmp,handleLike,{childClassName:".like-btn"})
+  configureListener(tmp, handleLike, { childClassName: '.like-btn' });
 
   return tmp;
 };
@@ -64,12 +58,11 @@ const moviesIterator = (movies, section) => {
   });
 };
 export const renderTopRated = async () => {
-  await MovieService.getTopRated()
+  await MovieService.getTopRated();
   const topRated = MovieService.topRatedMovies;
-   moviesIterator(topRated, topRatedSection);
+  moviesIterator(topRated, topRatedSection);
 };
 export const renderMostPopular = async () => {
-
   await MovieService.getPopularMovies();
   const popular = MovieService.popularMovies;
   moviesIterator(popular, popularSection);
