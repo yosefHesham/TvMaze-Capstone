@@ -6,3 +6,4 @@ import './style.css';
 window.onload = LikesService.getItemLikes()
 window.load = renderTopRated();
 window.load = renderMostPopular();
+

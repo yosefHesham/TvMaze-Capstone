@@ -1,3 +1,5 @@
+import configureListener from "./configure_listeners";
+import handleLike from "./event_listeners";
 import { toJson } from "./json_helper";
 import Movie from "./movie";
 import MovieService from "./movie_service";
@@ -31,6 +33,8 @@ const createMovieCard = (movie) => {
 
     </div>
   </article>`;
+  configureListener(tmp,handleLike)
+
   return tmp;
 };
 /**
@@ -51,11 +55,12 @@ const moviesIterator = (movies, section) => {
   });
 };
 export const renderTopRated = async () => {
-  await MovieService.getTopRated();
+  await MovieService.getTopRated()
   const topRated = MovieService.topRatedMovies;
-  moviesIterator(topRated, topRatedSection);
+   moviesIterator(topRated, topRatedSection);
 };
 export const renderMostPopular = async () => {
+
   await MovieService.getPopularMovies();
   const popular = MovieService.popularMovies;
   moviesIterator(popular, popularSection);
