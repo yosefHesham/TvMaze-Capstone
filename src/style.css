@@ -150,11 +150,11 @@ hr {
   margin: 4% auto;
 }
 
-.top-rated-header {
+header {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   height: 6rem;
   margin-top: 1rem;
 }
@@ -201,3 +201,5 @@ hr {
   width: 85%;
   padding: 0 1rem;
 }
+
+
