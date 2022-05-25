@@ -1,16 +1,17 @@
-import { toJson } from './json_helper';
-import MovieService from './movie_service';
+import { toJson } from "./json_helper";
+import Movie from "./movie";
+import MovieService from "./movie_service";
 
-export const topRatedSection = document.querySelector('.top-rated');
-const popularSection = document.querySelector('.popular');
+export const topRatedSection = document.querySelector(".top-rated");
+const popularSection = document.querySelector(".popular");
 
 /**
  *
  * @param {Movie} movie
- * @returns
+ *
  */
 const createMovieCard = (movie) => {
-  const tmp = document.createElement('tmp');
+  const tmp = document.createElement("tmp");
   // Check the data attribute you will use it to create the popup, retrieve it back with fromJson
   tmp.innerHTML = `<article class="movie-container" data=${toJson(movie)}">
     <div class="movie-card">
@@ -26,7 +27,8 @@ const createMovieCard = (movie) => {
 
     <div class="movie-interaction">
       <button> Comments </button>
-      <p class="like">  like </p>
+      <button class="like-btn" id=${movie.id}><span class="fa-regular fa-heart"></span> <span class="likes-count">0</span></button>
+
     </div>
   </article>`;
   return tmp;

@@ -202,4 +202,15 @@ header {
   padding: 0 1rem;
 }
 
+.like-btn {
+  cursor: pointer;
+  min-width: 70px;
+  height: 40px;
+  font-size: 1.3rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #bf0603;
+  margin-left: 15px;
+}
 
