@@ -10,8 +10,13 @@
   box-sizing: border-box;
 }
 
+
 html {
   font-size: 62.5%;
+}
+main {
+  
+  height: 100%;
 }
 
 body {
@@ -27,7 +32,6 @@ body {
   width: 100%;
   display: flex;
   column-gap: 2%;
-  height: 100vh;
 }
 
 .sidebar {
@@ -51,6 +55,9 @@ body {
 
 .movies-wrapper {
   width: 88%;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
 }
 
 .movies {
@@ -239,4 +246,14 @@ header {
   to {
     opacity: 1;
   }
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #222a39;
+  height: 10vh;
+  width: 100%;
+  margin-top: 10%;
 }
