@@ -34,7 +34,15 @@ const createMovieCard = (movie) => {
 
     </div>
   </article>`;
-  configureListener(tmp,handleLike)
+
+  /*
+  1- Each html element has query selector function so you can get any element inside it
+  2- you cann pass functions as arguments.
+  3- Ex: we have like-button element inside that temp.
+  4- we can get that button from the temp becauze it its parent
+  */
+
+  configureListener(tmp,handleLike,{childClassName:".like-btn"})
 
   return tmp;
 };
