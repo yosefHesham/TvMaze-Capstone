@@ -76,7 +76,6 @@ body {
 
 .movie-container {
   background-color: #222a39;
-  cursor: pointer;
   transition: transform 0.5s;
 }
 
@@ -204,13 +203,37 @@ header {
 
 .like-btn {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
   min-width: 70px;
-  height: 40px;
+  height: 60px;
   font-size: 1.3rem;
   background-color: transparent;
   border: none;
   outline: none;
   color: #bf0603;
-  margin-left: 15px;
+  margin-left: 20%;
+}
+.fa-heart {
+  color: rosybrown;
+  transform: scale(1.5);
+  transition:transform .5s ;
+  fill: #bf0603;
+}
+.fa-heart:hover {
+  transform: scale(2);
+}
+.fa-solid {
+  animation: changeOpacity 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@keyframes changeOpacity {
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+  
 }
 

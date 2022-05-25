@@ -29,7 +29,7 @@ const createMovieCard = (movie) => {
 
     <div class="movie-interaction">
       <button> Comments </button>
-      <button class="like-btn" id=${movie.id}><span class="fa-regular fa-heart"></span> <span class="likes-count">0</span></button>
+      <article class="like-btn" ><span  id=${movie.id} class="fa-regular fa-heart"></span> <span class="likes-count">0</span></article>
 
     </div>
   </article>`;
