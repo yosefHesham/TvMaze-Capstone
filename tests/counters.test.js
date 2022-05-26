@@ -7,7 +7,7 @@ import MovieService from '../modules/movie_service';
 
 it('Top rated Should return count of 2', () => {
   // arrrange
-  const movie = new Movie(1, 'title', 8, 'image', 'overview', 'date');
+  const movie = new Movie(1, 'title1', 8, 'image1', 'overview1', 'date1');
 
   // act
   for (let i = 0; i < 2; i += 1) {
@@ -21,7 +21,7 @@ it('Top rated Should return count of 2', () => {
 
 it('Most Popular rated Should return count of 2', () => {
   // arrrange
-  const movie = new Movie(1, 'title', 8, 'image', 'overview', 'date');
+  const movie = new Movie(1, 'title1', 8, 'image1', 'overview1', 'date1');
 
   // act
   for (let i = 0; i < 2; i += 1) {
