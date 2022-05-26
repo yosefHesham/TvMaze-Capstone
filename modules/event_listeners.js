@@ -1,4 +1,10 @@
 import LikesService from './likes_service';
+import createPopUp from './popup_ui';
+import CommentService from './comment__service.js';
+
+let savedId = '';
+
+const popup = document.querySelector('.comment__popup');
 
 /**
  *
@@ -21,5 +27,33 @@ const handleLike = async (event) => {
     numberElement.innerHTML = Number(numberElement.innerHTML) - 1;
   }
 };
+/** @param {Event} data */
+const handleComment = (data) => {
+  savedId = data.target.id;
+  createPopUp(data.target.id);
+  popup.style.display = 'block';
+};
+const togglePopup = document.querySelector('.toggle');
+togglePopup.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
+const handleSubmit = () => {
+  const frm = document.getElementById('frm');
+  frm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name');
+    const comment = document.getElementById('insist');
+    const data = {
+      item_id: savedId,
+      username: name.value,
+      comment: comment.value,
+    };
+    if (name.value !== '' && comment.value !== '' && savedId !== '') {
+      CommentService.postComments(data);
+      name.value = '';
+      comment.value = '';
+    }
+  });
+};
 
-export default handleLike;
+export { handleComment, handleLike, handleSubmit };
