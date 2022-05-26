@@ -32,6 +32,26 @@
 <body>
   
     <main class="main">
+      <section class="mobile-menu">
+        <article class="menu-header">
+          <h2 class="menu">TV Maze</h2>
+          <i class="fa-solid fa-xmark"></i>
+        </article>
+        <ul class="nav-list">
+          <li class="nav-item scale-item">
+            <p >Home</p>
+            <i class="fa-solid fa-house"></i>
+          </li>
+          <li class="nav-item scale-item">
+            <p >Trending</p>
+            <i class="fa-solid fa-fire"></i>
+          </li>
+          <li class="nav-item scale-item">
+            <p>Favourite</p>
+            <i class="fa-solid fa-heart-circle-check"></i>
+          </li>
+        </ul>
+      </section>
         <div class="comment__popup" id="poped">
             <div class="comment__popup-buton">
                 <svg width="24" fill="#fff" class="toggle" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg>
@@ -41,10 +61,10 @@
         </div>
     </div>
       
-        
-
       <header>
+        <i class="fa-solid fa-bars"></i>
         <h1 class="header__logo">TV Maze</h1>
+
         <section class="header__right">
           <div class="container">
             <input
@@ -68,29 +88,40 @@
           </div>
         </section>
       </header>
+      
       <div class="wrapper">
         <section class="sidebar">
-          <p class="sidebar-item">Home</p>
-          <p class="sidebar-item">Trending</p>
-          <p class="sidebar-item">Favourites</p>
+          <article class="sidebar-item scale-item">
+            <p class="sidebar-item">Home</p>
+            <i class="fa-solid fa-house"></i>
+          </article>
+          <article class="sidebar-item scale-item">
+            <p class="sidebar-item">Trending</p>
+            <i class="fa-solid fa-fire"></i>
+          </article>
+          <article class="sidebar-item scale-item">
+            <p class="sidebar-item">Favourite</p>
+            <i class="fa-solid fa-heart-circle-check"></i>
+          </article>
         </section>
 
         <div class="movies-wrapper">
           <article class="top-rated-header">
-            <p class="section-title">Top Rated<p>
+            <p class="section-title">Top Rated</p>
+            <p></p>
           </article>
+
           <section class="movies top-rated"></section>
-          <hr>
+          <hr />
           <article class="most-popular-header">
-            <p class="section-title">Most Popular<p>
+            <p class="section-title">Most Popular</p>
+            <p></p>
           </article>
+
           <section class="movies popular"></section>
-
         </div>
-
       </div>
       <footer>Created by Yousef and Pascal under CC license</footer>
-
     </main>
 </body>
 
