@@ -23,6 +23,3 @@ const call = async () => {
 // });
 
 window.load = call();
-window.load = renderTopRated();
-window.load = renderMostPopular();
-window.load = renderMostPopular();

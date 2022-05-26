@@ -1,3 +1,4 @@
+import Movie from "./movie";
 import MovieService from "./movie_service";
 
 
@@ -5,20 +6,27 @@ const createPopUp = (movieiId) => {
   const id = Number(movieiId);
   // /** @type {Array} */
   let allMovies = [...MovieService.popularMovies, ...MovieService.topRatedMovies];
+
+  /**
+   * @type {Movie}
+   */
   let foundMovie = allMovies.find(item => item.id === id);
-  console.log(foundMovie)
 
   let singlleMovie = document.getElementById('single-movie-data');
   singlleMovie.innerHTML = `
 <div class="popup__card">
-            <img src="https://image.tmdb.org/t/p/w200/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="single image">
+            <img src="${foundMovie.image}" alt="single image">
         </div>
         <div class="movie__data">
-            <h1 class="movie__header">Space 3</h1>
+            <h1 class="movie__header">${foundMovie.title}</h1>
             <div class="movie__data-details">
-                <p><b>Date:</b> 01/03/2020</p>
-                <p><b>Rate:</b> 8.5</p>
+                <p><b>Date:</b> ${foundMovie.date}</p>
+                <p><b>Rate:</b> ${foundMovie.rate}</p>
             </div>
+            <section class="overview">
+              <h3> Overview  </h3>
+              <p>  ${foundMovie.overview} </p>
+            </section>
             <ul class="comment__list">
                 <li><span>01/01/2020</span> 
                     <span><b>Pascal</b></span>
