@@ -79,6 +79,8 @@ body {
   width: 10%;
   height: 10%;
   transform: scale(1.5);
+  cursor: pointer;
+
 }
 
 .nav-item {
@@ -338,7 +340,6 @@ footer {
   }
   .fa-bars {
     display:  none;
-    cursor: pointer;
   }
   .sidebar {
     display: flex;
