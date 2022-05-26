@@ -19,12 +19,13 @@ class CommentService {
   };
 
   static getItemComments = async (dataId) => {
-    console.log(dataId, 'iiiiiii');
     const result = await fetch(`${INVOLVEMENT}/${process.env.APP_ID}/comments/?item_id=${dataId}`, {
       method: 'GET',
     });
     this.commentItems = await result.json();
   };
+
+  static commentCounter = () => this.commentItems.length || 0;
 }
 
 export default CommentService;

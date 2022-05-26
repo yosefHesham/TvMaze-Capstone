@@ -3,19 +3,19 @@ import CommentService from './comment__service';
 import getElement from './get_element';
 
 const createPopUp = (movieiId) => {
-  const id = Number(movieiId);
-  CommentService.getItemComments(id);
+    const id = Number(movieiId);
+    CommentService.getItemComments(id);
 
-  // /** @type {Array} */
-  const allMovies = [...MovieService.popularMovies, ...MovieService.topRatedMovies];
+    // /** @type {Array} */
+    const allMovies = [...MovieService.popularMovies, ...MovieService.topRatedMovies];
 
-  /**
-     * @type {Movie}
-     */
-  const foundMovie = allMovies.find((item) => item.id === id);
-  const singlleMovie = document.getElementById('single-movie-data');
+    /**
+       * @type {Movie}
+       */
+    const foundMovie = allMovies.find((item) => item.id === id);
+    const singlleMovie = document.getElementById('single-movie-data');
 
-  singlleMovie.innerHTML = `
+    singlleMovie.innerHTML = `
 <div class="popup__card">
             <img src="${foundMovie.image}" alt="single image">
         </div>
@@ -39,21 +39,23 @@ const createPopUp = (movieiId) => {
             </form>
         </div>`;
 
-  const getList = getElement(singlleMovie, '.comment__list');
-  CommentService.commentItems.forEach((el) => {
-    const li = document.createElement('li');
-    const span = document.createElement('span');
-    const span1 = document.createElement('span');
-    const span2 = document.createElement('span');
-    span.innerHTML = `${el.creation_date}`;
-    span1.innerHTML = `${`${el.username}: `}`;
-    span1.style.fontWeight = 'bold';
-    span2.innerHTML = `${el.comment}`;
-    li.appendChild(span);
-    li.appendChild(span1);
-    li.appendChild(span2);
-    getList.appendChild(li);
-  });
+    const getList = getElement(singlleMovie, '.comment__list');
+    CommentService.commentItems.forEach((el) => {
+        const li = document.createElement('li');
+        const span = document.createElement('span');
+        const span1 = document.createElement('span');
+        const span2 = document.createElement('span');
+        span.innerHTML = `${el.creation_date}`;
+        span1.innerHTML = `${`${el.username}: `}`;
+        span1.style.fontWeight = 'bold';
+        span2.innerHTML = `${el.comment}`;
+        li.appendChild(span);
+        li.appendChild(span1);
+        li.appendChild(span2);
+        getList.appendChild(li);
+    });
+
+    console.log(CommentService.commentCounter(), "Countng")
 };
 
 export default createPopUp;
