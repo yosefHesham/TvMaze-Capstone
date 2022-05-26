@@ -1,8 +1,10 @@
 import configureListener from './configure_listeners';
-import handleLike from './event_listeners';
+// import handleLike from './event_listeners';
+import { handleComment, handleLike } from './event_listeners';
+
 import { toJson } from './json_helper';
 import LikesService from './likes_service';
-import Movie from './movie';
+// import Movie from './movie';
 import MovieService from './movie_service';
 
 export const topRatedSection = document.querySelector('.top-rated');
@@ -15,7 +17,6 @@ const popularSection = document.querySelector('.popular');
  */
 const createMovieCard = (movie) => {
   const tmp = document.createElement('tmp');
-  console.log(movie);
   // Check the data attribute you will use it to create the popup, retrieve it back with fromJson
   tmp.innerHTML = `<article class="movie-container" data=${toJson(movie)}">
     <div class="movie-card">
@@ -30,7 +31,7 @@ const createMovieCard = (movie) => {
     </div>
 
     <div class="movie-interaction">
-      <button> Comments </button>
+      <button class="comment-btn" id=${movie.id}> Comments </button>
       <article class="like-btn" ><span  id=${movie.id} class="fa-regular fa-heart"></span> <span class="likes-count">${LikesService.getOneItemLikes(movie.id)}</span></article>
 
     </div>
@@ -43,6 +44,7 @@ const createMovieCard = (movie) => {
   4- we can get that button from the temp becauze it its parent
   */
 
+  configureListener(tmp, handleComment, { childClassName: '.comment-btn' });
   configureListener(tmp, handleLike, { childClassName: '.like-btn' });
 
   return tmp;

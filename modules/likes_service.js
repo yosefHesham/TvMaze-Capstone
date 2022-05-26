@@ -1,5 +1,5 @@
-import { INVOLVEMENT } from './api_helper';
-import { toJson } from './json_helper';
+import { INVOLVEMENT } from './api_helper.js';
+import { toJson } from './json_helper.js';
 
 class LikesService {
   static itemLikes = [];
@@ -26,7 +26,7 @@ class LikesService {
   };
 
   static getOneItemLikes = (id) => {
-    const item = LikesService.itemLikes.find((e) => e.item_id == id);
+    const item = LikesService.itemLikes.find((e) => e.item_id === id);
 
     if (item) {
       return item.likes;

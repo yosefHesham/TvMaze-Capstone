@@ -215,26 +215,30 @@ header {
   color: #bf0603;
   margin-left: 20%;
 }
+
 .fa-heart {
   color: rosybrown;
   transform: scale(1.5);
-  transition:transform .5s ;
+  transition: transform 0.5s;
   fill: #bf0603;
 }
+
 .fa-heart:hover {
   transform: scale(2);
 }
+
 .fa-solid {
   animation: changeOpacity 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
 @keyframes changeOpacity {
   from {
     opacity: 0;
   }
-  to{
+
+  to {
     opacity: 1;
   }
-  
 }
 
 /* Popup comments */
@@ -260,67 +264,91 @@ header {
   width: 80%;
   height: 50rem;
 }
-.movie__data{
-    display: flex;
-    flex-direction: column;
-    align-items: left;
+
+.movie__data {
+  display: flex;
+  flex-direction: column;
 }
-.movie__header{
-    align-self: center;
+
+.movie__header {
+  align-self: center;
 }
-.movie__data-details{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+
+.movie__data-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
-.comment__list{
+
+.comment__list {
   list-style: none;
 }
-.comment__list li{
-    display: flex;
-    flex-direction: row;
-    background-color: #474649b5;
-    margin: 2rem 0;
-    padding:1rem;
-    border-radius: 1rem;
-}
-.comment__list li span{
-    margin-right: 1rem;
-}
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
+.comment__list li {
+  display: flex;
+  flex-direction: row;
+  background-color: #474649b5;
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: 1rem;
 }
-label{
-    width: 80%;
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
+
+.comment__list li span {
+  margin-right: 1rem;
 }
-input{
-    width: 60%;
-    height: 2rem;
-    padding: 2rem;
-    color: #080213;
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-textarea{
-    width: 60%;
-    height: 10rem;
-    padding: 2rem;
-    margin-top: 2rem;
-    color:#080213;
+
+label {
+  width: 80%;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
 }
+
+input {
+  width: 60%;
+  height: 2rem;
+  padding: 2rem;
+  color: #080213;
+}
+
+textarea {
+  width: 60%;
+  height: 10rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  color: #080213;
+}
+
 input:focus,
-textarea:focus{
-outline: none;
+textarea:focus {
+  outline: none;
 }
-button[type="submit"]{
-    background-color: #fff;
-    align-self:flex-start;
-    color: #080213;
-    padding: .5rem 1rem;
 
+button[type="submit"] {
+  background-color: #fff;
+  align-self: flex-start;
+  color: #080213;
+  padding: 0.5rem 1rem;
+}
+
+.comment__popup-buton {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  position: fixed;
+  width: 70%;
+}
+
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
 }

@@ -1,4 +1,5 @@
 import LikesService from './likes_service';
+import CommentService from './comment__service';
 
 /**
  *
@@ -24,4 +25,26 @@ const handleLike = async (event) => {
   }
 };
 
-export default handleLike;
+const handleComment = (data) => {
+  const { id } = data.target;
+  const frm = document.getElementById('frm');
+  const name = document.getElementById('name');
+  const comment = document.getElementById('insist');
+  frm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const newComment = {
+      item_id: id,
+      username: name.value,
+      comment: comment.value,
+    };
+    console.log(newComment);
+    CommentService.postComments(newComment);
+  });
+
+  data.target.addEventListener('click', (e) => {
+    const removepoped = document.getElementById('poped');
+    console.log(e.target.id);
+    removepoped.classList.remove('none');
+  });
+};
+export { handleComment, handleLike };
