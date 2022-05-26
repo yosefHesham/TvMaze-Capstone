@@ -8,11 +8,7 @@ const call = async () => {
   renderTopRated();
   renderMostPopular();
 };
-const togglePopup = document.querySelector('.toggle');
-togglePopup.addEventListener('click', () => {
-  const poped = document.getElementById('poped');
-  poped.classList.add('none');
-});
+
 
 // const frm = document.getElementById('frm');
 // frm.addEventListener('submit', (event) => {

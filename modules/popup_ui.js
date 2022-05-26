@@ -1,104 +1,41 @@
-// import configureListener from './configure_listeners.js';
-// // import handleLike from './event_listeners';
-// import { handleComment, handleLike } from './event_listeners.js';
-
-// import { toJson } from './json_helper.js';
-// import LikesService from './likes_service.js';
-// // import Movie from './movie';
-// import MovieService from './movie_service.js';
-
-// export const topRatedSection = document.querySelector('.top-rated');
-// const popularSection = document.querySelector('.popular');
-
-// /**
-//  *
-//  * @param {Movie} movie
-//  *
-//  */
-// const createCommentCard = (comment) => {
-//   const tmp = document.createElement('tmp');
-//   // Check the data attribute you will use it to create the popup, retrieve it back with fromJson
-//   tmp.innerHTML = `<article class="movie-container" data=${toJson(comment)}">
-//     <div class="movie-card">
-//     <img src="${movie.image}" alt="${movie.title}">
-//     <div class="movie-data">
-//       <p class="title"> ${movie.title} </p>
-//       <div class="rate-wrapper">
-//       <span class = "fa fa-star checked"></span>  
-//       <p class="rate"> ${movie.rate} </p>
-
-//     </div>
-//     </div>
-
-//     <div class="movie-interaction">
-//       <button class="comment-btn" data=${toJson(movie)} id=${movie.id}> Comments </button>
-//       <article class="like-btn" ><span  id=${movie.id} class="fa-regular fa-heart"></span> <span class="likes-count">${LikesService.getOneItemLikes(movie.id)}</span></article>
-
-//     </div>
-//   </article>`;
-
-//   /*
-//   1- Each html element has query selector function so you can get any element inside it
-//   2- you cann pass functions as arguments.
-//   3- Ex: we have like-button element inside that temp.
-//   4- we can get that button from the temp becauze it its parent
-//   */
-//   // configureListener(tmp, handleSubmit, { childClassName: '.button1' });
-
-//   configureListener(tmp, handleComment, { childClassName: '.comment-btn' });
-
-//   configureListener(tmp, handleLike, { childClassName: '.like-btn' });
+import MovieService from "./movie_service";
 
 
-//   return tmp;
-// };
-// /**
-//  *
-//  * @param {Array<Movie>} movies
-//  * @param {HTMLElement} section
-//  */
-// const moviesIterator = (movies, section) => {
-//   /** @type {Array<Movie>} */
-//   let i = 0;
-//   movies.forEach((movie) => {
-//     i += 1;
-//     const temp = createMovieCard(movie);
+const createPopUp = (movieiId) => {
+  const id = Number(movieiId);
+  // /** @type {Array} */
+  let allMovies = [...MovieService.popularMovies, ...MovieService.topRatedMovies];
+  let foundMovie = allMovies.find(item => item.id === id);
+  console.log(foundMovie)
 
-//     setTimeout(() => {
-//       section.appendChild(temp.firstChild);
-//     }, 300 * i);
-//   });
-// };
-// export const renderTopRated = async () => {
-//   await MovieService.getTopRated();
-//   const topRated = MovieService.topRatedMovies;
-//   moviesIterator(topRated, topRatedSection);
-// };
-// export const renderMostPopular = async () => {
-//   await MovieService.getPopularMovies();
-//   const popular = MovieService.popularMovies;
-//   moviesIterator(popular, popularSection);
-// };
+  let singlleMovie = document.getElementById('single-movie-data');
+  singlleMovie.innerHTML = `
+<div class="popup__card">
+            <img src="https://image.tmdb.org/t/p/w200/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="single image">
+        </div>
+        <div class="movie__data">
+            <h1 class="movie__header">Space 3</h1>
+            <div class="movie__data-details">
+                <p><b>Date:</b> 01/03/2020</p>
+                <p><b>Rate:</b> 8.5</p>
+            </div>
+            <ul class="comment__list">
+                <li><span>01/01/2020</span> 
+                    <span><b>Pascal</b></span>
+                    <span><b>Ii is so terible</b></span>
+                </li>
+                <li><span>01/01/2020 </span> 
+                    <span><b>Pascal: </b></span>
+                    <span><b>It is romantic and lovely</b></span>
+                </li>
 
-  // console.log(data.dataset.data);
-  // console.log(movieDetails)
-  // const { id } = data.target;
-  // const frm = document.getElementById('frm');
-  // const name = document.getElementById('name');
-  // const comment = document.getElementById('insist');
-  // frm.addEventListener('submit', (event) => {
-  //   event.preventDefault();
-  //   const newComment = {
-  //     item_id: id,
-  //     username: name.value,
-  //     comment: comment.value,
-  //   };
-  //   console.log(newComment);
-  //   CommentService.postComments(newComment);
-  // });
+            </ul>
+            <form id="frm">
+                <label for="name"><input type="text" id="name" placeholder="Your names"></label>
+                <label for="insist"><textarea id="insist" placeholder="Your insist"></textarea></label>
+              <label for="button"><button id="button" class="button1" type="submit">Comment</button></label> 
+            </form>
+        </div>`
+};
 
-  // data.target.addEventListener('click', (e) => {
-  //   const removepoped = document.getElementById('poped');
-  //   console.log(e.target.id);
-  //   removepoped.classList.remove('none');
-  // });
+export default createPopUp;
