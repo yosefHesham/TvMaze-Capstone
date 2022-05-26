@@ -15,9 +15,7 @@ const handleLike = async (event) => {
    * @type {HTMLElement}
    */
   const targetElement = event.target;
-  console.log(targetElement.id);
   const numberElement = targetElement.nextElementSibling;
-  console.log(numberElement);
   if (targetElement.classList.contains('fa-regular')) {
     targetElement.classList.remove('fa-regular');
     targetElement.classList.add('fa-solid');

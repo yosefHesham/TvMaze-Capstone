@@ -6,13 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-    <script src="https://kit.fontawesome.com/1dea6ac3ad.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/1dea6ac3ad.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
-    <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>  
-    <!--  Add bootstrap icon Library  -->  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--  Add bootstrap icon Library  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,400;0,500;0,700;1,100&family=Satisfy&display=swap"
@@ -23,6 +32,26 @@
 <body>
   
     <main class="main">
+      <section class="mobile-menu">
+        <article class="menu-header">
+          <h2 class="menu">TV Maze</h2>
+          <i class="fa-solid fa-xmark"></i>
+        </article>
+        <ul class="nav-list">
+          <li class="nav-item scale-item">
+            <p >Home</p>
+            <i class="fa-solid fa-house"></i>
+          </li>
+          <li class="nav-item scale-item">
+            <p >Trending</p>
+            <i class="fa-solid fa-fire"></i>
+          </li>
+          <li class="nav-item scale-item">
+            <p>Favourite</p>
+            <i class="fa-solid fa-heart-circle-check"></i>
+          </li>
+        </ul>
+      </section>
         <div class="comment__popup" id="poped">
             <div class="comment__popup-buton">
                 <svg width="24" fill="#fff" class="toggle" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg>
@@ -31,48 +60,68 @@
             
         </div>
     </div>
-        <div class="wrapper">
-            <section class="sidebar">
-                <article class="sidebar-item">
-                    <p>Home</p>
-                </article>
-                <article class="sidebar-item">
-                    <p>Trending</p>
-                </article>
-                <article class="sidebar-item">
-                    <p>Favourites</p>
-                </article>
-            </section>
+      
+      <header>
+        <i class="fa-solid fa-bars"></i>
+        <h1 class="header__logo">TV Maze</h1>
 
-            <div class="movies-wrapper">
-                <article class="top-rated-header">
+        <section class="header__right">
+          <div class="container">
+            <input
+              type="text"
+              id="search-box"
+              placeholder="Search movie..."
+              class="search__box"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#fa983a"
+              class="search__icon"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M21.172 24l-7.387-7.387c-1.388.874-3.024 1.387-4.785 1.387-4.971 0-9-4.029-9-9s4.029-9 9-9 9 4.029 9 9c0 1.761-.514 3.398-1.387 4.785l7.387 7.387-2.828 2.828zm-12.172-8c3.859 0 7-3.14 7-7s-3.141-7-7-7-7 3.14-7 7 3.141 7 7 7z"
+              />
+            </svg>
+          </div>
+        </section>
+      </header>
+      
+      <div class="wrapper">
+        <section class="sidebar">
+          <article class="sidebar-item scale-item">
+            <p class="sidebar-item">Home</p>
+            <i class="fa-solid fa-house"></i>
+          </article>
+          <article class="sidebar-item scale-item">
+            <p class="sidebar-item">Trending</p>
+            <i class="fa-solid fa-fire"></i>
+          </article>
+          <article class="sidebar-item scale-item">
+            <p class="sidebar-item">Favourite</p>
+            <i class="fa-solid fa-heart-circle-check"></i>
+          </article>
+        </section>
 
-                    <div class="header__logo">
-                        <h3 class="section-title">TV maze</h3>
-                    </div>
-                    <div class="header__right">
-                        <div class="container">
-                            <input type="text" id="search-box" placeholder="Search movie..." class="search__box">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fa983a" class="search__icon" width="24"
-                                height="24" viewBox="0 0 24 24">
-                                <path
-                                    d="M21.172 24l-7.387-7.387c-1.388.874-3.024 1.387-4.785 1.387-4.971 0-9-4.029-9-9s4.029-9 9-9 9 4.029 9 9c0 1.761-.514 3.398-1.387 4.785l7.387 7.387-2.828 2.828zm-12.172-8c3.859 0 7-3.14 7-7s-3.141-7-7-7-7 3.14-7 7 3.141 7 7 7z" />
-                            </svg>
-                        </div>
-                    </div>
-                </article>
-                <section class="movies top-rated">
-                </section>
-                <hr>
-                <article class="top-rated-header">
-                    <h3 class="section-title">Most Popular</h3>
-                </article>
-                <section class="movies popular">
+        <div class="movies-wrapper">
+          <article class="top-rated-header">
+            <p class="section-title">Top Rated</p>
+            <p></p>
+          </article>
 
-                </section>
-            </div>
+          <section class="movies top-rated"></section>
+          <hr />
+          <article class="most-popular-header">
+            <p class="section-title">Most Popular</p>
+            <p></p>
+          </article>
+
+          <section class="movies popular"></section>
         </div>
-        
+      </div>
+      <footer>Created by Yousef and Pascal under CC license</footer>
     </main>
 </body>
 

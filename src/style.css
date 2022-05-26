@@ -14,6 +14,10 @@ html {
   font-size: 62.5%;
 }
 
+main {
+  height: 100%;
+}
+
 body {
   /* font-family: 'Bebas Neue', cursive; */
   font-family: 'Roboto', sans-serif;
@@ -27,17 +31,89 @@ body {
   width: 100%;
   display: flex;
   column-gap: 2%;
-  height: 100vh;
 }
 
 .sidebar {
   width: 8%;
   height: 100vh;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   row-gap: 10%;
   background-color: var(--secondary);
+}
+
+.header__logo {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+  height: 100%;
+  width: 70%;
+  position: absolute;
+  z-index: 10000;
+  background-color: #222a39;
+  animation: slide 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes slide {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 70%;
+  }
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.menu-header h2 {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.fa-xmark {
+  transform: scale(1.5);
+  margin-right: 10px;
+  cursor: pointer;
+  color: var(--secondary);
+}
+
+.fa-bars {
+  margin-left: 20px;
+  width: 10%;
+  height: 10%;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.nav-item {
+  display: flex;
+  margin-left: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  list-style: none;
+  cursor: pointer;
+  column-gap: 10px;
+}
+
+.nav-item p {
+  margin: 0;
+}
+
+.scale-item {
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scale-item:hover {
+  font-size: 20px;
 }
 
 .sidebar-item {
@@ -50,7 +126,11 @@ body {
 }
 
 .movies-wrapper {
-  width: 88%;
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+  height: 100%;
+  flex-direction: column;
 }
 
 .movies {
@@ -64,6 +144,20 @@ body {
       auto-fill,
       minmax(200px, 1fr)
     );
+}
+
+.top-rated-header,
+.most-popular-header {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.count {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--secondary);
 }
 
 .section-title {
@@ -169,7 +263,7 @@ header {
 .search__box {
   float: left;
   width: 0;
-  height: 4rem;
+  height: 2rem;
   background: none;
   color: #f7f7f7;
   font-size: 1.5rem;
@@ -184,7 +278,7 @@ header {
 
 .search__icon {
   box-sizing: border-box;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   display: inline-block;
   justify-content: center;
   align-items: center;
@@ -345,10 +439,39 @@ button[type="submit"] {
   margin-bottom: 5px;
 }
 
-.hidde {
-  display: none;
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #222a39;
+  height: 10vh;
+  width: 100%;
+  margin-top: 10%;
 }
 
-.block {
-  display: block;
+@media only screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none !important;
+  }
+
+  h1 {
+    display: block !important;
+  }
+
+  .fa-bars {
+    display: none;
+  }
+
+  .sidebar {
+    display: flex;
+    overflow: hidden;
+    width: 8%;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+  }
+
+  .search__box {
+    height: 4rem !important;
+  }
 }

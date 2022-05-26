@@ -35,7 +35,8 @@
     "dotenv-webpack": "^7.1.0",
     "env": "^0.0.2",
     "jest": "^28.1.0",
-    "jsdom": "^19.0.0"
+    "jsdom": "^19.0.0",
+    "refresh": "^1.0.1"
   },
   "bugs": {
     "url": "https://github.com/yosefHesham/TvMaze-Capstone/issues"
