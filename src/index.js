@@ -1,14 +1,12 @@
 import LikesService from '../modules/likes_service.js';
 import { renderMostPopular, renderTopRated } from '../modules/movies_ui.js';
 import './style.css';
-import { handleComment } from '../modules/event_listeners.js';
 
 const call = async () => {
   await LikesService.getItemLikes();
   renderTopRated();
   renderMostPopular();
 };
-
 
 // const frm = document.getElementById('frm');
 // frm.addEventListener('submit', (event) => {

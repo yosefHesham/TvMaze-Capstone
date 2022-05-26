@@ -1,18 +1,16 @@
-import Movie from "./movie";
-import MovieService from "./movie_service";
-
+import MovieService from './movie_service';
 
 const createPopUp = (movieiId) => {
   const id = Number(movieiId);
   // /** @type {Array} */
-  let allMovies = [...MovieService.popularMovies, ...MovieService.topRatedMovies];
+  const allMovies = [...MovieService.popularMovies, ...MovieService.topRatedMovies];
 
   /**
    * @type {Movie}
    */
-  let foundMovie = allMovies.find(item => item.id === id);
+  const foundMovie = allMovies.find((item) => item.id === id);
 
-  let singlleMovie = document.getElementById('single-movie-data');
+  const singlleMovie = document.getElementById('single-movie-data');
   singlleMovie.innerHTML = `
 <div class="popup__card">
             <img src="${foundMovie.image}" alt="single image">
@@ -43,7 +41,7 @@ const createPopUp = (movieiId) => {
                 <label for="insist"><textarea id="insist" placeholder="Your insist"></textarea></label>
               <label for="button"><button id="button" class="button1" type="submit">Comment</button></label> 
             </form>
-        </div>`
+        </div>`;
 };
 
 export default createPopUp;

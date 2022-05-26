@@ -1,6 +1,6 @@
 import configureListener from './configure_listeners.js';
 // import handleLike from './event_listeners';
-import { handleComment, handleLike, handleSubmit } from './event_listeners.js';
+import { handleComment, handleLike } from './event_listeners.js';
 
 import { toJson } from './json_helper.js';
 import LikesService from './likes_service.js';
@@ -49,8 +49,6 @@ const createMovieCard = (movie) => {
 
   configureListener(tmp, handleLike, { childClassName: '.like-btn' });
   // configureListener(tmp, handlePopup, { childClassName: '.comment-btn' });
-
-
 
   return tmp;
 };

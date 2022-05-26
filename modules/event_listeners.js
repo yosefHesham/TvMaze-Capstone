@@ -1,8 +1,7 @@
 import LikesService from './likes_service';
 import createPopUp from './popup_ui';
 
-const popup = document.querySelector(".comment__popup");
-
+const popup = document.querySelector('.comment__popup');
 
 /**
  *
@@ -31,12 +30,10 @@ const handleLike = async (event) => {
 const handleComment = (data) => {
   createPopUp(data.target.id);
   popup.style.display = 'block';
-  
-  
 };
 const togglePopup = document.querySelector('.toggle');
 togglePopup.addEventListener('click', () => {
-  popup.style.display ='none';
+  popup.style.display = 'none';
 });
 const handleSubmit = () => {
 };
