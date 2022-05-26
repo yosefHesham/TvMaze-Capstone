@@ -6,7 +6,6 @@ let savedId = '';
 
 const popup = document.querySelector('.comment__popup');
 
-
 /**
  *
  * @param {Event} event
