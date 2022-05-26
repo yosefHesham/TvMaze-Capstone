@@ -22,7 +22,6 @@ class LikesService {
       method: 'GET',
     });
     this.itemLikes = await result.json();
-    console.log(this.itemLikes);
   };
 
   static getOneItemLikes = (id) => {

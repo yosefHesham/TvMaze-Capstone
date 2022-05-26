@@ -72,6 +72,20 @@ body {
     );
 }
 
+.top-rated-header,
+.most-popular-header {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.count {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--secondary);
+}
+
 .section-title {
   text-align: start;
   margin-top: 2%;
