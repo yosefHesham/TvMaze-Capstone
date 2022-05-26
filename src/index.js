@@ -8,16 +8,4 @@ const call = async () => {
   renderMostPopular();
 };
 
-// const frm = document.getElementById('frm');
-// frm.addEventListener('submit', (event) => {
-//   event.preventDefault();
-//   const name = document.getElementById('name');
-//   const comment = document.getElementById('insist');
-//   const data = {
-//     name: name.value,
-//     comment: comment.value,
-//   };
-//   handleComment(data);
-// });
-
 window.load = call();
