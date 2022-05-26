@@ -43,7 +43,6 @@ body {
   background-color: var(--secondary);
 }
 
-
 .header__logo {
   display: none;
 }
@@ -55,18 +54,17 @@ body {
   position: absolute;
   z-index: 10000;
   background-color: #222a39;
-  animation: slide .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: slide 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
 
 @keyframes slide {
   from {
     width: 0%;
   }
+
   to {
     width: 70%;
   }
-  
 }
 
 .menu-header {
@@ -75,43 +73,47 @@ body {
   align-items: center;
   margin-bottom: 20px;
 }
+
 .menu-header h2 {
   margin-left: 10px;
   font-size: 20px;
-  
 }
+
 .fa-xmark {
   transform: scale(1.5);
   margin-right: 10px;
   cursor: pointer;
   color: var(--secondary);
 }
+
 .fa-bars {
   margin-left: 20px;
   width: 10%;
   height: 10%;
   transform: scale(1.5);
   cursor: pointer;
-
 }
 
 .nav-item {
   display: flex;
   margin-left: 10px;
   align-items: center;
-  margin-bottom: 20px ;
+  margin-bottom: 20px;
+  list-style: none;
+  cursor: pointer;
   column-gap: 10px;
 }
+
 .nav-item p {
   margin: 0;
 }
 
 .scale-item {
-  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)  
-
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
 .scale-item:hover {
-  font-size: 30px
+  font-size: 30px;
 }
 
 .sidebar-item {
@@ -275,7 +277,7 @@ header {
 
 .search__icon {
   box-sizing: border-box;
-  font-size: .8rem;
+  font-size: 0.8rem;
   display: inline-block;
   justify-content: center;
   align-items: center;
@@ -350,12 +352,15 @@ footer {
   h1 {
     display: block !important;
   }
+
   .fa-bars {
-    display:  none;
+    display: none;
   }
+
   .sidebar {
     display: flex;
   }
+
   .search__box {
     height: 4rem !important;
   }
