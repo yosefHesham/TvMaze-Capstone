@@ -113,7 +113,7 @@ body {
 }
 
 .scale-item:hover {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .sidebar-item {
@@ -126,8 +126,9 @@ body {
 }
 
 .movies-wrapper {
-  width: 88%;
+  width: 80%;
   display: flex;
+  margin: 0 auto;
   height: 100%;
   flex-direction: column;
 }
@@ -359,6 +360,11 @@ footer {
 
   .sidebar {
     display: flex;
+    overflow: hidden;
+    width: 8%;
+    position: fixed;
+    z-index: 1000;
+    left: 0px;
   }
 
   .search__box {
