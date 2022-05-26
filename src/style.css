@@ -50,11 +50,26 @@ body {
 
 .mobile-menu {
   display: none;
-  width: 70%;
   height: 100%;
+  width: 70%;
   position: absolute;
   z-index: 10000;
   background-color: #222a39;
+  animation: slide .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.closed-menu {
+  animation: close-slide .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes slide {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 70%;
+  }
+  
 }
 
 .menu-header {
