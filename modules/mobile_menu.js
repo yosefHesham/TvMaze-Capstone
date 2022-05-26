@@ -8,7 +8,6 @@ closeBtn.addEventListener("click", () => {
 })
 
 const addMenuListener = () => { menuBtn.addEventListener("click",() => {
-  console.log("WTF");
   menu.style.display = "block";
 
 })
