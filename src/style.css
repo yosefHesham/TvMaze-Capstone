@@ -76,7 +76,6 @@ body {
 
 .movie-container {
   background-color: #222a39;
-  cursor: pointer;
   transition: transform 0.5s;
 }
 
@@ -150,11 +149,11 @@ hr {
   margin: 4% auto;
 }
 
-.top-rated-header {
+header {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   height: 6rem;
   margin-top: 1rem;
 }
@@ -200,4 +199,44 @@ hr {
 .container:hover > .search__box {
   width: 85%;
   padding: 0 1rem;
+}
+
+.like-btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  min-width: 70px;
+  height: 60px;
+  font-size: 1.3rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #bf0603;
+  margin-left: 20%;
+}
+
+.fa-heart {
+  color: rosybrown;
+  transform: scale(1.5);
+  transition: transform 0.5s;
+  fill: #bf0603;
+}
+
+.fa-heart:hover {
+  transform: scale(2);
+}
+
+.fa-solid {
+  animation: changeOpacity 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes changeOpacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

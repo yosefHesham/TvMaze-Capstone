@@ -1,14 +1,12 @@
+import configureListener from './configure_listeners';
+import handleLike from './event_listeners';
 import { toJson } from './json_helper';
+import LikesService from './likes_service';
 import MovieService from './movie_service';
 
 export const topRatedSection = document.querySelector('.top-rated');
 const popularSection = document.querySelector('.popular');
 
-/**
- *
- * @param {Movie} movie
- * @returns
- */
 const createMovieCard = (movie) => {
   const tmp = document.createElement('tmp');
   // Check the data attribute you will use it to create the popup, retrieve it back with fromJson
@@ -26,9 +24,20 @@ const createMovieCard = (movie) => {
 
     <div class="movie-interaction">
       <button> Comments </button>
-      <p class="like">  like </p>
+      <article class="like-btn" ><span  id=${movie.id} class="fa-regular fa-heart"></span> <span class="likes-count">${LikesService.getOneItemLikes(movie.id)}</span></article>
+
     </div>
   </article>`;
+
+  /*
+  1- Each html element has query selector function so you can get any element inside it
+  2- you cann pass functions as arguments.
+  3- Ex: we have like-button element inside that temp.
+  4- we can get that button from the temp becauze it its parent
+  */
+
+  configureListener(tmp, handleLike, { childClassName: '.like-btn' });
+
   return tmp;
 };
 /**
