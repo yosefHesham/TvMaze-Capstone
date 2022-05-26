@@ -21,5 +21,12 @@ class MovieService {
     const data = result.results;
     this.topRatedMovies = data.map((movie) => new Movie(movie));
   }
+
+  static countTopRated = () => {
+    return this.topRatedMovies.length;
+  }
+  static countMostPopular = () => {
+    return this.popularMovies.length;
+  }
 }
 export default MovieService;
