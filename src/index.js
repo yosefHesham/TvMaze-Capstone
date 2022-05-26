@@ -5,8 +5,8 @@ import './style.css';
 
 const call = async () => {
   await LikesService.getItemLikes();
- await renderTopRated();
- await renderMostPopular();
+  await renderTopRated();
+  await renderMostPopular();
   showCounts();
 };
 
