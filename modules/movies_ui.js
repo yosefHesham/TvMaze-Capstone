@@ -10,11 +10,6 @@ import MovieService from './movie_service.js';
 export const topRatedSection = document.querySelector('.top-rated');
 const popularSection = document.querySelector('.popular');
 
-/**
- *
- * @param {Movie} movie
- *
- */
 const createMovieCard = (movie) => {
   const tmp = document.createElement('tmp');
   // Check the data attribute you will use it to create the popup, retrieve it back with fromJson
