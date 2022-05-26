@@ -244,9 +244,10 @@ header {
 /* Popup comments */
 .comment__popup {
   width: 100vw;
-  height: 200%;
   background-color: #080213;
-  position: absolute;
+  position: fixed;
+  height: 100%;
+  overflow: scroll;
   z-index: 1000;
   padding: 4% 20%;
   display: none;
@@ -338,10 +339,10 @@ button[type="submit"] {
 }
 
 .comment__popup-buton {
-  display: inline-flex;
+  display: flex;
   flex-direction: row-reverse;
-  position: fixed;
-  width: 70%;
+  width: 100%;
+  margin-bottom: 5px;
 
 }
 
