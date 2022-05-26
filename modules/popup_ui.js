@@ -1,16 +1,20 @@
 import MovieService from './movie_service';
+import CommentService from './comment__service';
+import getElement from './get_element';
 
 const createPopUp = (movieiId) => {
   const id = Number(movieiId);
+  CommentService.getItemComments(id);
+
   // /** @type {Array} */
   const allMovies = [...MovieService.popularMovies, ...MovieService.topRatedMovies];
 
   /**
-   * @type {Movie}
-   */
+     * @type {Movie}
+     */
   const foundMovie = allMovies.find((item) => item.id === id);
-
   const singlleMovie = document.getElementById('single-movie-data');
+
   singlleMovie.innerHTML = `
 <div class="popup__card">
             <img src="${foundMovie.image}" alt="single image">
@@ -26,14 +30,6 @@ const createPopUp = (movieiId) => {
               <p>  ${foundMovie.overview} </p>
             </section>
             <ul class="comment__list">
-                <li><span>01/01/2020</span> 
-                    <span><b>Pascal</b></span>
-                    <span><b>Ii is so terible</b></span>
-                </li>
-                <li><span>01/01/2020 </span> 
-                    <span><b>Pascal: </b></span>
-                    <span><b>It is romantic and lovely</b></span>
-                </li>
 
             </ul>
             <form id="frm">
@@ -42,6 +38,27 @@ const createPopUp = (movieiId) => {
               <label for="button"><button id="button" class="button1" type="submit">Comment</button></label> 
             </form>
         </div>`;
+
+  const getList = getElement(singlleMovie, '.comment__list');
+  CommentService.commentItems.forEach((el) => {
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+    const span1 = document.createElement('span');
+    const span2 = document.createElement('span');
+    span.innerHTML = `${el.creation_date}`;
+    span1.innerHTML = `${`${el.username}: `}`;
+    span1.style.fontWeight = 'bold';
+    span2.innerHTML = `${el.comment}`;
+    li.appendChild(span);
+    li.appendChild(span1);
+    li.appendChild(span2);
+    getList.appendChild(li);
+  });
 };
 
 export default createPopUp;
+
+//
+//                     <span><b>Pascal: </b></span>
+//                     <span><b>It is romantic and lovely</b></span>
+//                 </li>
