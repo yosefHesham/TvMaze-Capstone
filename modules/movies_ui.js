@@ -1,8 +1,11 @@
-import configureListener from './configure_listeners';
-import handleLike from './event_listeners';
-import { toJson } from './json_helper';
-import LikesService from './likes_service';
-import MovieService from './movie_service';
+import configureListener from './configure_listeners.js';
+// import handleLike from './event_listeners';
+import { handleComment, handleLike, handleSubmit } from './event_listeners.js';
+
+import { toJson } from './json_helper.js';
+import LikesService from './likes_service.js';
+// import Movie from './movie';
+import MovieService from './movie_service.js';
 
 export const topRatedSection = document.querySelector('.top-rated');
 const popularSection = document.querySelector('.popular');
@@ -23,7 +26,7 @@ const createMovieCard = (movie) => {
     </div>
 
     <div class="movie-interaction">
-      <button> Comments </button>
+      <button type="button" class="comment-btn" id=${movie.id}> Comments </button>
       <article class="like-btn" ><span  id=${movie.id} class="fa-regular fa-heart"></span> <span class="likes-count">${LikesService.getOneItemLikes(movie.id)}</span></article>
 
     </div>
@@ -35,8 +38,12 @@ const createMovieCard = (movie) => {
   3- Ex: we have like-button element inside that temp.
   4- we can get that button from the temp becauze it its parent
   */
+  // configureListener(tmp, handleSubmit, { childClassName: '.button1' });
+
+  configureListener(tmp, handleComment, { childClassName: '.comment-btn' });
 
   configureListener(tmp, handleLike, { childClassName: '.like-btn' });
+  configureListener(tmp, handleSubmit, { childClassName: '.comment-btn' });
 
   return tmp;
 };
