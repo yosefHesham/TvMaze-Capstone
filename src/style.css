@@ -72,6 +72,10 @@ body {
     );
 }
 
+.top-rated-header, .most-popular-header {
+  display: flex;
+}
+
 .section-title {
   text-align: start;
   margin-top: 2%;
