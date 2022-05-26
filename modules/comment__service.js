@@ -18,8 +18,8 @@ class CommentService {
       return res;
     };
 
-    static getItemComments = async () => {
-      const result = await fetch(`${INVOLVEMENT}/${process.env.APP_ID}/comments`, {
+    static getItemComments = async (dataId) => {
+      const result = await fetch(`${INVOLVEMENT}/${process.env.APP_ID}/comments/?item_id=${dataId}`, {
         method: 'GET',
       });
       this.commentItems = await result.json();

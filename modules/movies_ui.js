@@ -1,11 +1,11 @@
-import configureListener from './configure_listeners';
+import configureListener from './configure_listeners.js';
 // import handleLike from './event_listeners';
-import { handleComment, handleLike } from './event_listeners';
+import { handleComment, handleLike, handleSubmit } from './event_listeners.js';
 
-import { toJson } from './json_helper';
-import LikesService from './likes_service';
+import { toJson } from './json_helper.js';
+import LikesService from './likes_service.js';
 // import Movie from './movie';
-import MovieService from './movie_service';
+import MovieService from './movie_service.js';
 
 export const topRatedSection = document.querySelector('.top-rated');
 const popularSection = document.querySelector('.popular');
@@ -17,7 +17,6 @@ const popularSection = document.querySelector('.popular');
  */
 const createMovieCard = (movie) => {
   const tmp = document.createElement('tmp');
-  console.log(movie);
   // Check the data attribute you will use it to create the popup, retrieve it back with fromJson
   tmp.innerHTML = `<article class="movie-container" data=${toJson(movie)}">
     <div class="movie-card">
@@ -44,9 +43,14 @@ const createMovieCard = (movie) => {
   3- Ex: we have like-button element inside that temp.
   4- we can get that button from the temp becauze it its parent
   */
+  // configureListener(tmp, handleSubmit, { childClassName: '.button1' });
 
   configureListener(tmp, handleComment, { childClassName: '.comment-btn' });
+
   configureListener(tmp, handleLike, { childClassName: '.like-btn' });
+  // configureListener(tmp, handlePopup, { childClassName: '.comment-btn' });
+
+
 
   return tmp;
 };

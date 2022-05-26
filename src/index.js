@@ -14,17 +14,17 @@ togglePopup.addEventListener('click', () => {
   poped.classList.add('none');
 });
 
-const frm = document.getElementById('frm');
-frm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const name = document.getElementById('name');
-  const comment = document.getElementById('insist');
-  const data = {
-    name: name.value,
-    comment: comment.value,
-  };
-  handleComment(data);
-});
+// const frm = document.getElementById('frm');
+// frm.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   const name = document.getElementById('name');
+//   const comment = document.getElementById('insist');
+//   const data = {
+//     name: name.value,
+//     comment: comment.value,
+//   };
+//   handleComment(data);
+// });
 
 window.load = call();
 window.load = renderTopRated();

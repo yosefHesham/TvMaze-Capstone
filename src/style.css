@@ -249,8 +249,7 @@ header {
   position: absolute;
   z-index: 1000;
   padding: 4% 20%;
-
-  /* display: none; */
+  display: none;
 }
 
 .popup__card {
@@ -343,9 +342,10 @@ button[type="submit"] {
   flex-direction: row-reverse;
   position: fixed;
   width: 70%;
+
 }
 
-.none {
+.hidde {
   display: none;
 }
 
