@@ -3,9 +3,9 @@ import CommentService from './comment__service';
 import getElement from './get_element';
 import commentSize from './comentSize';
 
-const createPopUp = (movieiId) => {
+const createPopUp = async (movieiId) => {
   const id = Number(movieiId);
-  CommentService.getItemComments(id);
+  await CommentService.getItemComments(id);
 
   // /** @type {Array} */
   const allMovies = [...MovieService.popularMovies, ...MovieService.topRatedMovies];
@@ -44,6 +44,7 @@ const createPopUp = (movieiId) => {
 
   const getList = getElement(singlleMovie, '.comment__list');
   const comments = Array.from(CommentService.commentItems);
+  console.log(comments)
   const cter = document.getElementById('cnter');
   cter.innerHTML = commentSize(comments);
   comments.forEach((el) => {
