@@ -1,10 +1,11 @@
 /**
  * @jest-environment jsdom
  */
+import commentSize from '../modules/comentSize.js';
 import Movie from '../modules/movie';
 import MovieService from '../modules/movie_service';
 
-const counterFunction = require('../modules/comentSize.js');
+const counterFunction = commentSize;
 
 it('Top rated Should return count of 2', () => {
   // arrrange
@@ -37,10 +38,5 @@ it('Most Popular rated Should return count of 2', () => {
 describe('Testing the comment counter function', () => {
   test('It should reurn the length of array', () => {
     expect(counterFunction([2, 3, 4])).toBe(3);
-  });
-
-  it('should terminate if there is no order', async () => {
-    jest.spyOn(counterFunction, 'handler');
-    expect(counterFunction.handler).toHaveReturned();
   });
 });
