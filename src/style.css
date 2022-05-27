@@ -404,6 +404,13 @@ form {
   align-items: center;
 }
 
+.fa-spinner {
+  margin-left: 50%;
+  margin-top: 25%;
+  font-size: 25px;
+  color: #f4af5c;
+}
+
 label {
   width: 80%;
   justify-content: center;
@@ -476,6 +483,7 @@ footer {
     z-index: 1000;
     left: 0;
   }
+
 
   .search__box {
     height: 4rem !important;

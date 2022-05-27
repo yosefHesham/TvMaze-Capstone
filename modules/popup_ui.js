@@ -2,19 +2,17 @@ import MovieService from './movie_service';
 import CommentService from './comment__service';
 import getElement from './get_element';
 import commentSize from './comentSize';
+import configureListener from './configure_listeners';
+import { handleSubmit } from './event_listeners';
 
 const createPopUp = async (movieiId) => {
+  const singlleMovie = document.getElementById('single-movie-data');
+  singlleMovie.innerHTML = `<i class="fas fa-spinner fa-spin"></i>`;
   const id = Number(movieiId);
+  const allMovies = [...MovieService.popularMovies, ...MovieService.topRatedMovies];
+  const foundMovie = allMovies.find((item) => item.id === id);
   await CommentService.getItemComments(id);
 
-  // /** @type {Array} */
-  const allMovies = [...MovieService.popularMovies, ...MovieService.topRatedMovies];
-
-  /**
-         * @type {Movie}
-         */
-  const foundMovie = allMovies.find((item) => item.id === id);
-  const singlleMovie = document.getElementById('single-movie-data');
 
   singlleMovie.innerHTML = `
 <div class="popup__card">
@@ -35,13 +33,14 @@ const createPopUp = async (movieiId) => {
             <ul class="comment__list">
 
             </ul>
-            <form id="frm">
-                <label for="name"><input type="text" id="name" placeholder="Your names"></label>
-                <label for="insist"><textarea id="insist" placeholder="Your insist"></textarea></label>
+            <form  class="form" action="#">
+                <label for="name"><input type="text" id="name" name="name" placeholder="Your names"></label>
+                <label for="insist"><textarea id="insist" name="comment" placeholder="Your insist"></textarea></label>
               <label for="button"><button id="button" class="button1" type="submit">Comment</button></label> 
             </form>
         </div>`;
 
+configureListener(singlleMovie,handleSubmit,{eventType: "submit", childClassName:".form"})
   const getList = getElement(singlleMovie, '.comment__list');
   const comments = Array.from(CommentService.commentItems);
   console.log(comments)

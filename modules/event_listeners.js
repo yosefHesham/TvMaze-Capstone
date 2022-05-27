@@ -38,23 +38,29 @@ const togglePopup = document.querySelector('.toggle');
 togglePopup.addEventListener('click', () => {
   popup.style.display = 'none';
 });
-const handleSubmit = () => {
-  const frm = document.getElementById('frm');
-  frm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name');
-    const comment = document.getElementById('insist');
-    const data = {
-      item_id: savedId,
-      username: name.value,
-      comment: comment.value,
-    };
-    if (name.value !== '' && comment.value !== '' && savedId !== '') {
+
+
+const handleSubmit = (event) => {
+  /**
+   * @type {HTMLFormElement}
+   */
+  event.preventDefault();
+  const form = event.target;
+    const name = form.elements.name.value
+    const comment = form.elements.comment.value;
+    console.log(name)
+   
+    if (name !== '' && comment !== '' && savedId !== '') {
+      const data = {
+        item_id: savedId,
+        username: name,
+        comment: comment,
+      };
       CommentService.postComments(data);
-      name.value = '';
-      comment.value = '';
+      form.elements.name.value = '';
+      form.elements.comment.value = '';
     }
-  });
+  
 };
 
 export { handleComment, handleLike, handleSubmit };

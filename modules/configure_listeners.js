@@ -1,6 +1,6 @@
 import getElement from './get_element';
 
-const configureListener = (parent, handler, { childClassName }) => {
+const configureListener = (parent, handler, { childClassName , eventType ="click" }) => {
   /**
    * @type {HTMLElement}
    */
@@ -8,7 +8,7 @@ const configureListener = (parent, handler, { childClassName }) => {
   /// like button element
   const childElement = getElement(parent, childClassName);
 
-  childElement.addEventListener('click', handler);
+  childElement.addEventListener(eventType, handler);
 };
 
 export default configureListener;
