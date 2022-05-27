@@ -3,17 +3,16 @@ import CommentService from './comment__service';
 import getElement from './get_element';
 import commentSize from './comentSize';
 import configureListener from './configure_listeners';
-import { handleSubmit } from './event_listeners';
 import createComment from './create_comment';
+import handleSubmit from './handle_form';
 
 const createPopUp = async (movieiId) => {
   const singlleMovie = document.getElementById('single-movie-data');
-  singlleMovie.innerHTML = `<i class="fas fa-spinner fa-spin"></i>`;
+  singlleMovie.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
   const id = Number(movieiId);
   const allMovies = [...MovieService.popularMovies, ...MovieService.topRatedMovies];
   const foundMovie = allMovies.find((item) => item.id === id);
   await CommentService.getItemComments(id);
-
 
   singlleMovie.innerHTML = `
 <div class="popup__card">
@@ -34,22 +33,22 @@ const createPopUp = async (movieiId) => {
             <ul class="comment__list">
 
             </ul>
-            <form  class="form" action="#">
+            <form  class="form" data=${movieiId} action="#">
                 <label for="name"><input type="text" id="name" name="name" placeholder="Your names"></label>
                 <label for="insist"><textarea id="insist" name="comment" placeholder="Your insist"></textarea></label>
               <label for="button"><button id="button" class="button1" type="submit">Comment</button></label> 
             </form>
         </div>`;
 
-configureListener(singlleMovie,handleSubmit,{eventType: "submit", childClassName:".form"})
+  configureListener(singlleMovie, handleSubmit, { eventType: 'submit', childClassName: '.form' });
   const getList = getElement(singlleMovie, '.comment__list');
   const comments = Array.from(CommentService.commentItems);
-  console.log(comments)
+  console.log(comments);
   const cter = document.getElementById('cnter');
   cter.innerHTML = commentSize(comments);
   comments.forEach((el) => {
     const li = createComment(el);
-  
+
     getList.appendChild(li);
   });
 };

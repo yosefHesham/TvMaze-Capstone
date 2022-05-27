@@ -27,7 +27,7 @@ class CommentService {
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
-      
+
     });
     this.commentItems = await result.json();
     console.log(this.commentItems);

@@ -1,6 +1,6 @@
 import getElement from './get_element';
 
-const configureListener = (parent, handler, { childClassName , eventType ="click" }) => {
+const configureListener = (parent, handler, { childClassName, eventType = 'click' }) => {
   /**
    * @type {HTMLElement}
    */
