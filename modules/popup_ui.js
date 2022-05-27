@@ -38,7 +38,7 @@ const createPopUp = (movieiId) => {
             <form id="frm">
                 <label for="name"><input type="text" id="name" placeholder="Your names"></label>
                 <label for="insist"><textarea id="insist" placeholder="Your insist"></textarea></label>
-              <label for="button"><button id="button" class="button1" type="submit">Comment</button></label> 
+              <label for="button"><button id="button" class="button1" type="button">Comment</button></label> 
             </form>
         </div>`;
 
