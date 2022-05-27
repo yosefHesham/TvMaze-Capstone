@@ -10,7 +10,7 @@ class MovieService {
     let result = await fetch(`${BASEURL}/${POPULAR}?api_key=${process.env.API_KEY}`);
     result = await result.json();
     /** @type {Array} */
-    const data = result.results;
+    const data = await result.results;
     this.popularMovies = data.map((movie) => new Movie(movie));
   }
 
