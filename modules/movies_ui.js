@@ -25,11 +25,9 @@ const createMovieCard = (movie) => {
     </div>
     </div>
 
-    <div class="movie-interaction">
-    <div class="comment-counter comment-btn" id=${movie.id}>
-      <svg type="button" fill="rosybrown"  width="24"  height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 1c-6.338 0-12 4.226-12 10.007 0 2.05.739 4.063 2.047 5.625l-1.993 6.368 6.946-3c1.705.439 3.334.641 4.864.641 7.174 0 12.136-4.439 12.136-9.634 0-5.812-5.701-10.007-12-10.007zm0 1c6.065 0 11 4.041 11 9.007 0 4.922-4.787 8.634-11.136 8.634-1.881 0-3.401-.299-4.946-.695l-5.258 2.271 1.505-4.808c-1.308-1.564-2.165-3.128-2.165-5.402 0-4.966 4.935-9.007 11-9.007zm-5 7.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm5 0c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm5 0c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5z"/></svg><span>8</span></div>
+    <div class="movie-interaction id=${movie.id}">
+  <article class="comment-btn" id=${movie.id}> <span class="fa-solid fa-comment" id=${movie.id}></span> <span id=${movie.id}>8</span> </article>      
       <article class="like-btn" ><span  id=${movie.id} class="fa-regular fa-heart"></span> <span class="likes-count">${LikesService.getOneItemLikes(movie.id)}</span></article>
-
     </div>
   </article>`;
 
@@ -44,7 +42,6 @@ const createMovieCard = (movie) => {
   configureListener(tmp, handleComment, { childClassName: '.comment-btn' });
 
   configureListener(tmp, handleLike, { childClassName: '.like-btn' });
-  configureListener(tmp, handleSubmit, { childClassName: '.comment-btn' });
 
   return tmp;
 };

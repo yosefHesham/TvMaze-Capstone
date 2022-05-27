@@ -29,9 +29,12 @@ const handleLike = async (event) => {
 };
 /** @param {Event} data */
 const handleComment = (data) => {
+  console.log(data.target)
   savedId = data.target.id;
   createPopUp(data.target.id);
   popup.style.display = 'block';
+  
+  
 };
 const togglePopup = document.querySelector('.toggle');
 togglePopup.addEventListener('click', () => {

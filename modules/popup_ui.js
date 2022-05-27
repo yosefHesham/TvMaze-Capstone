@@ -40,7 +40,9 @@ const createPopUp = (movieiId) => {
         </div>`;
 
     const getList = getElement(singlleMovie, '.comment__list');
-    CommentService.commentItems.forEach((el) => {
+    const comments = Array.from(CommentService.commentItems);
+    console.log(comments);
+ comments.forEach(el => {
         const li = document.createElement('li');
         const span = document.createElement('span');
         const span1 = document.createElement('span');
