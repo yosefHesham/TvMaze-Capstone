@@ -22,10 +22,15 @@ class CommentService {
   };
 
   static getItemComments = async (dataId) => {
-    const result = await fetch(`${INVOLVEMENT}/${process.env.APP_ID}/comments/?item_id=${dataId}`, {
+    const result = await fetch(`${INVOLVEMENT}/${process.env.APP_ID}/comments?item_id=${dataId.toString()}`, {
       method: 'GET',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+
     });
     this.commentItems = await result.json();
+    console.log(this.commentItems);
   };
 }
 
