@@ -3,7 +3,6 @@ import { handleComment, handleLike } from './event_listeners.js';
 
 import { toJson } from './json_helper.js';
 import LikesService from './likes_service.js';
-// import Movie from './movie';
 import MovieService from './movie_service.js';
 
 export const topRatedSection = document.querySelector('.top-rated');
@@ -29,14 +28,6 @@ const createMovieCard = (movie) => {
       <article class="like-btn" ><span  id=${movie.id} class="fa-regular fa-heart"></span> <span class="likes-count">${LikesService.getOneItemLikes(movie.id)}</span></article>
     </div>
   </article>`;
-
-  /*
-  1- Each html element has query selector function so you can get any element inside it
-  2- you cann pass functions as arguments.
-  3- Ex: we have like-button element inside that temp.
-  4- we can get that button from the temp becauze it its parent
-  */
-  // configureListener(tmp, handleSubmit, { childClassName: '.button1' });
 
   configureListener(tmp, handleComment, { childClassName: '.comment-btn' });
 
