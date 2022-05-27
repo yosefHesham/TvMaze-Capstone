@@ -1,6 +1,7 @@
 import LikesService from './likes_service';
 import createPopUp from './popup_ui';
 import CommentService from './comment__service.js';
+import createComment from './create_comment';
 
 let savedId = '';
 
@@ -41,14 +42,13 @@ togglePopup.addEventListener('click', () => {
 
 
 const handleSubmit = (event) => {
+  event.preventDefault();
   /**
    * @type {HTMLFormElement}
    */
-  event.preventDefault();
   const form = event.target;
     const name = form.elements.name.value
     const comment = form.elements.comment.value;
-    console.log(name)
    
     if (name !== '' && comment !== '' && savedId !== '') {
       const data = {
@@ -56,6 +56,7 @@ const handleSubmit = (event) => {
         username: name,
         comment: comment,
       };
+      form.previousElementSibling.appendChild(createComment({creation_date:"1s Ago",username:name,comment:comment}))
       CommentService.postComments(data);
       form.elements.name.value = '';
       form.elements.comment.value = '';
