@@ -19,10 +19,7 @@ main {
 }
 
 body {
-  /* font-family: 'Bebas Neue', cursive; */
   font-family: 'Roboto', sans-serif;
-
-  /* font-family: 'Satisfy', cursive; */
   color: #fff;
   background-color: var(--black);
 }
