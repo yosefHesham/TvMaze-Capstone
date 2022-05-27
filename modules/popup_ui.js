@@ -33,17 +33,17 @@ const createPopUp = async (movieiId) => {
             <ul class="comment__list">
 
             </ul>
-            <form  class="form" data=${movieiId} action="#">
+             <form  class="form" data=${movieiId} action="#">
                 <label for="name"><input type="text" id="name" name="name" placeholder="Your names"></label>
                 <label for="insist"><textarea id="insist" name="comment" placeholder="Your insist"></textarea></label>
               <label for="button"><button id="button" class="button1" type="submit">Comment</button></label> 
+
             </form>
         </div>`;
 
   configureListener(singlleMovie, handleSubmit, { eventType: 'submit', childClassName: '.form' });
   const getList = getElement(singlleMovie, '.comment__list');
   const comments = Array.from(CommentService.commentItems);
-  console.log(comments);
   const cter = document.getElementById('cnter');
   cter.innerHTML = commentSize(comments);
   comments.forEach((el) => {
