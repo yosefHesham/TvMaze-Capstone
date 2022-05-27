@@ -1,4 +1,4 @@
-import { INVOLVEMENT } from './api_helper';
+import { APP_ID, INVOLVEMENT } from './api_helper';
 import { toJson } from './json_helper';
 // import Movie from './movie';
 
@@ -22,7 +22,7 @@ class CommentService {
   };
 
   static getItemComments = async (dataId) => {
-    const result = await fetch(`${INVOLVEMENT}/${process.env.APP_ID}/comments?item_id=${dataId.toString()}`, {
+    const result = await fetch(`${INVOLVEMENT}/${APP_ID}/comments?item_id=${dataId.toString()}`, {
       method: 'GET',
       headers: {
         'Content-type': 'application/json; charset=UTF-8',

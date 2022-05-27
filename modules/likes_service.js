@@ -1,11 +1,11 @@
-import { INVOLVEMENT } from './api_helper.js';
+import { APP_ID, INVOLVEMENT } from './api_helper.js';
 import { toJson } from './json_helper.js';
 
 class LikesService {
   static itemLikes = [];
 
   static postItemLikes = async (id) => {
-    const result = await fetch(`${INVOLVEMENT}/${process.env.APP_ID}/likes`, {
+    const result = await fetch(`${INVOLVEMENT}/${APP_ID}/likes`, {
       method: 'POST',
       body: toJson({ item_id: id }),
       headers: {
@@ -18,7 +18,7 @@ class LikesService {
   };
 
   static getItemLikes = async () => {
-    const res = await fetch(`${INVOLVEMENT}/${process.env.APP_ID}/likes`, {
+    const res = await fetch(`${INVOLVEMENT}/${APP_ID}/likes`, {
       method: 'GET',
     });
     this.itemLikes = await res.json();
