@@ -1,6 +1,7 @@
 import MovieService from './movie_service';
 import CommentService from './comment__service';
 import getElement from './get_element';
+import commentSize from './comentSize';
 
 const createPopUp = (movieiId) => {
   const id = Number(movieiId);
@@ -10,8 +11,8 @@ const createPopUp = (movieiId) => {
   const allMovies = [...MovieService.popularMovies, ...MovieService.topRatedMovies];
 
   /**
-       * @type {Movie}
-       */
+         * @type {Movie}
+         */
   const foundMovie = allMovies.find((item) => item.id === id);
   const singlleMovie = document.getElementById('single-movie-data');
 
@@ -29,6 +30,8 @@ const createPopUp = (movieiId) => {
               <h3> Overview  </h3>
               <p>  ${foundMovie.overview} </p>
             </section>
+            <h3> Comments: (<span id="cnter"></span>) </h3>
+            
             <ul class="comment__list">
 
             </ul>
@@ -41,6 +44,8 @@ const createPopUp = (movieiId) => {
 
   const getList = getElement(singlleMovie, '.comment__list');
   const comments = Array.from(CommentService.commentItems);
+  const cter = document.getElementById('cnter');
+  cter.innerHTML = commentSize(comments);
   comments.forEach((el) => {
     const li = document.createElement('li');
     const span = document.createElement('span');
@@ -55,8 +60,6 @@ const createPopUp = (movieiId) => {
     li.appendChild(span2);
     getList.appendChild(li);
   });
-
-  console.log(CommentService.commentCounter(), 'Countng');
 };
 
 export default createPopUp;

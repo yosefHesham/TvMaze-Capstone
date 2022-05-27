@@ -388,6 +388,12 @@ header {
   border-radius: 1rem;
 }
 
+.comment-counter span {
+  color: #bf0603;
+  margin-left: 4px;
+  font-size: 1.3rem;
+}
+
 .comment__list li span {
   margin-right: 1rem;
 }
@@ -475,18 +481,15 @@ footer {
     height: 4rem !important;
   }
 }
-.comment-btn{
-  background:transparent;
+
+.comment-btn {
+  background: transparent;
   border: none;
 }
-.comment-counter{
+
+.comment-counter {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-.comment-counter span{
-color: #bf0603;
-margin-left: 4px;
-font-size: 1.3rem;
 }

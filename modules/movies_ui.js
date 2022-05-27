@@ -1,6 +1,4 @@
-import CommentService from './comment__service.js';
 import configureListener from './configure_listeners.js';
-// import handleLike from './event_listeners';
 import { handleComment, handleLike } from './event_listeners.js';
 
 import { toJson } from './json_helper.js';
@@ -11,9 +9,8 @@ import MovieService from './movie_service.js';
 export const topRatedSection = document.querySelector('.top-rated');
 const popularSection = document.querySelector('.popular');
 
-const createMovieCard = async (movie) => {
+const createMovieCard = (movie) => {
   const tmp = document.createElement('tmp');
-
   // Check the data attribute you will use it to create the popup, retrieve it back with fromJson
   tmp.innerHTML = `<article class="movie-container" data=${toJson(movie)}">
     <div class="movie-card">
@@ -28,7 +25,7 @@ const createMovieCard = async (movie) => {
     </div>
 
     <div class="movie-interaction id=${movie.id}">
-  <article class="comment-btn" id=${movie.id}> <span class="fa-solid fa-comment" id=${movie.id}></span> <span id=${movie.id}>${await CommentService.commentCounter(movie.id)}</span> </article>
+  <article class="comment-btn" id=${movie.id}> <span class="fa-solid fa-comment" id=${movie.id}></span></article>
       <article class="like-btn" ><span  id=${movie.id} class="fa-regular fa-heart"></span> <span class="likes-count">${LikesService.getOneItemLikes(movie.id)}</span></article>
     </div>
   </article>`;
