@@ -18,13 +18,14 @@ class LikesService {
   };
 
   static getItemLikes = async () => {
-    await fetch(`${INVOLVEMENT}/${process.env.APP_ID}/likes`, {
+    const res = await fetch(`${INVOLVEMENT}/${process.env.APP_ID}/likes`, {
       method: 'GET',
     });
+    this.itemLikes = await res.json();
   };
 
   static getOneItemLikes = (id) => {
-    const item = LikesService.itemLikes.find((e) => e.item_id === id);
+    const item = this.itemLikes.find((e) => e.item_id === id);
 
     if (item) {
       return item.likes;

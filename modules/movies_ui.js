@@ -1,6 +1,5 @@
 import configureListener from './configure_listeners.js';
-// import handleLike from './event_listeners';
-import { handleComment, handleLike, handleSubmit } from './event_listeners.js';
+import { handleComment, handleLike } from './event_listeners.js';
 
 import { toJson } from './json_helper.js';
 import LikesService from './likes_service.js';
@@ -25,10 +24,9 @@ const createMovieCard = (movie) => {
     </div>
     </div>
 
-    <div class="movie-interaction">
-      <button type="button" class="comment-btn" id=${movie.id}> Comments </button>
+    <div class="movie-interaction id=${movie.id}">
+  <article class="comment-btn" id=${movie.id}> <span class="fa-solid fa-comment" id=${movie.id}></span></article>
       <article class="like-btn" ><span  id=${movie.id} class="fa-regular fa-heart"></span> <span class="likes-count">${LikesService.getOneItemLikes(movie.id)}</span></article>
-
     </div>
   </article>`;
 
@@ -43,7 +41,6 @@ const createMovieCard = (movie) => {
   configureListener(tmp, handleComment, { childClassName: '.comment-btn' });
 
   configureListener(tmp, handleLike, { childClassName: '.like-btn' });
-  configureListener(tmp, handleSubmit, { childClassName: '.comment-btn' });
 
   return tmp;
 };

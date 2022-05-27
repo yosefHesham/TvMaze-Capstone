@@ -1,16 +1,19 @@
 import MovieService from './movie_service';
+import CommentService from './comment__service';
+import getElement from './get_element';
+import commentSize from './comentSize';
+import configureListener from './configure_listeners';
+import createComment from './create_comment';
+import handleSubmit from './handle_form';
 
-const createPopUp = (movieiId) => {
-  const id = Number(movieiId);
-  // /** @type {Array} */
-  const allMovies = [...MovieService.popularMovies, ...MovieService.topRatedMovies];
-
-  /**
-   * @type {Movie}
-   */
-  const foundMovie = allMovies.find((item) => item.id === id);
-
+const createPopUp = async (movieiId) => {
   const singlleMovie = document.getElementById('single-movie-data');
+  singlleMovie.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+  const id = Number(movieiId);
+  const allMovies = [...MovieService.popularMovies, ...MovieService.topRatedMovies];
+  const foundMovie = allMovies.find((item) => item.id === id);
+  await CommentService.getItemComments(id);
+
   singlleMovie.innerHTML = `
 <div class="popup__card">
             <img src="${foundMovie.image}" alt="single image">
@@ -25,23 +28,29 @@ const createPopUp = (movieiId) => {
               <h3> Overview  </h3>
               <p>  ${foundMovie.overview} </p>
             </section>
+            <h3> Comments: (<span id="cnter"></span>) </h3>
+            
             <ul class="comment__list">
-                <li><span>01/01/2020</span> 
-                    <span><b>Pascal</b></span>
-                    <span><b>Ii is so terible</b></span>
-                </li>
-                <li><span>01/01/2020 </span> 
-                    <span><b>Pascal: </b></span>
-                    <span><b>It is romantic and lovely</b></span>
-                </li>
 
             </ul>
-            <form id="frm">
-                <label for="name"><input type="text" id="name" placeholder="Your names"></label>
-                <label for="insist"><textarea id="insist" placeholder="Your insist"></textarea></label>
+            <form  class="form" data=${movieiId} action="#">
+                <label for="name"><input type="text" id="name" name="name" placeholder="Your names"></label>
+                <label for="insist"><textarea id="insist" name="comment" placeholder="Your insist"></textarea></label>
               <label for="button"><button id="button" class="button1" type="submit">Comment</button></label> 
             </form>
         </div>`;
+
+  configureListener(singlleMovie, handleSubmit, { eventType: 'submit', childClassName: '.form' });
+  const getList = getElement(singlleMovie, '.comment__list');
+  const comments = Array.from(CommentService.commentItems);
+  console.log(comments);
+  const cter = document.getElementById('cnter');
+  cter.innerHTML = commentSize(comments);
+  comments.forEach((el) => {
+    const li = createComment(el);
+
+    getList.appendChild(li);
+  });
 };
 
 export default createPopUp;
