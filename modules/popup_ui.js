@@ -4,6 +4,7 @@ import getElement from './get_element';
 import commentSize from './comentSize';
 import configureListener from './configure_listeners';
 import { handleSubmit } from './event_listeners';
+import createComment from './create_comment';
 
 const createPopUp = async (movieiId) => {
   const singlleMovie = document.getElementById('single-movie-data');
@@ -47,17 +48,8 @@ configureListener(singlleMovie,handleSubmit,{eventType: "submit", childClassName
   const cter = document.getElementById('cnter');
   cter.innerHTML = commentSize(comments);
   comments.forEach((el) => {
-    const li = document.createElement('li');
-    const span = document.createElement('span');
-    const span1 = document.createElement('span');
-    const span2 = document.createElement('span');
-    span.innerHTML = `${el.creation_date}`;
-    span1.innerHTML = `${`${el.username}: `}`;
-    span1.style.fontWeight = 'bold';
-    span2.innerHTML = `${el.comment}`;
-    li.appendChild(span);
-    li.appendChild(span1);
-    li.appendChild(span2);
+    const li = createComment(el);
+  
     getList.appendChild(li);
   });
 };
