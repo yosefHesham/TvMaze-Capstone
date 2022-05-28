@@ -4,6 +4,8 @@
 
 > A website that keep you updated with the most rated and most popular movies.
 
+![image](./movies.png)
+
 
 ## Built With
 
