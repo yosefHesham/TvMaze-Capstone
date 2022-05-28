@@ -15,7 +15,7 @@
 - The Movies Database API.
 - Involvement API
 
-## Live Demo (if available)
+## Live Demo
 
 [Click here to see a live preview](https://unrivaled-alfajores-11e018.netlify.app/)
 
