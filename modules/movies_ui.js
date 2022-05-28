@@ -18,7 +18,6 @@ const createMovieCard = (movie) => {
       <div class="rate-wrapper">
       <span class = "fa fa-star checked"></span>  
       <p class="rate"> ${movie.rate} </p>
-
     </div>
     </div>
 
