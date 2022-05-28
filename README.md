@@ -1,38 +1,42 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# TV Maze
 
-> Description the project.
+> A website that keep you updated with the most rated and most popular movies.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML, CSS, ES6.
+- Webpack
+- Jest
+- The Movies Database API.
+- Involvement API
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Click here to see a live preview](https://unrivaled-alfajores-11e018.netlify.app/)
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
 
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
-### Setup
+### Setup 
+1- clone this repo
 
 ### Install
+1- run : `npm i ` to install dependencies.
+2- run : `npm start` to run the webite
+3- run : `npm run build` to build the website
+
 
 ### Usage
 
 ### Run tests
+ 1- run `npm test`
 
 ### Deployment
 
@@ -40,17 +44,15 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Author1**
+👤 **Yousef Hesham**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@yosefHesham](https://github.com/yosefHesham)
+- Twitter: [@Yousef45653478](https://twitter.com/Yousef45653478)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/yousef-hesham-b132ba179/)
 
-👤 **Author2**
+👤 **PASCAL**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@bizip](https://github.com/bizip)
 
 ## 🤝 Contributing
 
